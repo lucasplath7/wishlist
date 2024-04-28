@@ -1,0 +1,60 @@
+<form class="container"
+  [formGroup]="contactForm"
+  (ngSubmit)="$event.preventDefault(); submitForm()"
+>
+  <div>
+    <label class="form-label">Your Name</label>
+    <input
+      type="text"
+      class="form-control"
+      formControlName="senderName"
+    >
+  </div>
+  <div>
+    <label class="form-label">Email</label>
+    <input
+      type="email"
+      class="form-control"
+      formControlName="senderEmail"
+    >
+    <div *ngIf="contactForm.get('senderEmail')?.touched && contactForm.get('senderEmail')?.invalid">
+      <small
+        class="text-danger"
+        *ngIf="contactForm.get('senderEmail')?.hasError('required')"
+      >email is required</small>
+      <small
+        class="text-danger"
+        *ngIf="contactForm.get('senderEmail')?.hasError('email')"
+      >please enter correct email</small>
+      <small
+        class="text-danger"
+        *ngIf="contactForm.get('senderEmail')?.hasError('invalidEmailDomain')"
+      >domain provided is invalid</small>
+    </div>
+  </div>
+  <div>
+    <label class="form-label"></label>
+    <textarea
+      class="form-control"
+      rows="3"
+      formControlName="senderMessage"
+    ></textarea>
+    <div *ngIf="contactForm.get('senderMessage')?.touched && contactForm.get('senderMessage')?.invalid">
+      <small
+        class="text-danger"
+        *ngIf="contactForm.get('senderMessage')?.hasError('required')"
+      >message is required</small>
+      <small
+        class="text-danger"
+        *ngIf="contactForm.get('senderMessage')?.hasError('minlength')"
+      >must be at least 10 characters</small>
+    </div>
+  </div>
+  <div>
+    <button
+      type="submit"
+      class="btn"
+      [disabled]="contactForm.invalid"
+    >Send Message</button>
+  </div>
+</form>

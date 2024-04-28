@@ -1,0 +1,15 @@
+  <div class="form-check">
+    <label class="form-check-label" [ngClass]="cssClasses">
+      <input
+        class="checkbox"
+        type="checkbox"
+        [checked]="wish.isComplete"
+        (click)="toggleFullfilled()"
+      > {{wish.wishText}}
+    </label>
+    <span class="button-div">
+      <button
+        (click)="removeWish()"
+      >X</button>
+    </span>
+  </div>

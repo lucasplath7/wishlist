@@ -1,0 +1,15 @@
+{{ }} double curly brace --- reference class var/prop in element content
+*ngIf=condition: then template else template
+<ng-template #templateName></ng-template> --- # indicates nae of template to be referenced in ng directive
+[] --- binds js property to component property (js props are camelcase)
+[attr.<attribute-name>] --- binds html attribute to component property
+(<event attr>) --- binds  component method to html even
+[(ngModel)] --- two way binding (bind form field to property of class)
+    - ngModel is the directive provided
+
+Use [] to bind from source to view
+Use () to bind from view to source
+Use [()] to bind in a two-way sequence of view to source to view
+
+(ngModelChange) --- binding directive for elements that can change (like onchange attr)
+[ngClass] --- link class names to a prop or getter in the component class for dynamic styling

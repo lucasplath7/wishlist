@@ -1,0 +1,14 @@
+[
+  {
+    "wishText": "wish One",
+    "isComplete": false
+  },
+  {
+    "wishText": "wish Two",
+    "isComplete": true
+  },
+  {
+    "wishText": "wish Three",
+    "isComplete": false
+  }
+]
